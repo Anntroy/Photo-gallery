@@ -1,6 +1,6 @@
 const get = document.getElementById.bind(document);
 const create = document.createElement.bind(document);
-const galleryContainer = get("main-gallery-view");
+const galleryContainer = get("section");
 
 function createMainView(){
     gallery = JSON.parse(localStorage.getItem("gallery"))
