@@ -13,7 +13,7 @@ html {
 }
 
 :root {
-    --light-dark: rgb(237, 237, 237);
+    --light-dark: rgb(223, 219, 219);
     --middle-dark: rgb(172, 165, 165);
     --white-title: rgb(248, 246, 246);
 }
@@ -59,12 +59,6 @@ html {
 
 .header__button-h1 {
     font-size: 1.6rem;
-}
-
-/* Main Area */
-
-.section{
-    margin-left: 9vh;
 }
 
 /* Grid CSS */
@@ -132,4 +126,20 @@ body {
 
 .aside__button:hover {
     background-color: var(--middle-dark);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Media Queries */
+
+@media (min-width: 600px) {
+    .section{
+        margin-left: 9vh;
+    }
+
+    .hidden {
+        display: block;
+    }
 }
