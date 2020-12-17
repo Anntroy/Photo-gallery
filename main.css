@@ -14,11 +14,12 @@ html {
 
 :root {
     --light-dark: rgb(237, 237, 237);
+    --middle-dark: rgb(172, 165, 165);
     --white-title: rgb(248, 246, 246);
 }
 
 /* HEADER AREA */
-.main_header{
+.header{
     background-color: var(--light-dark);
     height: 9vh;
     font-size: 0.8rem;
@@ -29,11 +30,7 @@ html {
     z-index: 1;
 }
 
-.main_header__button-right{
-    margin-left: auto;
-}
-
-.icon_button {
+.header__button {
     height: 9vh;
     width: 9vh;
     min-height: 44px;
@@ -41,7 +38,15 @@ html {
     background-color: transparent;
 }
 
-.title_button {
+.header__button:hover {
+    filter: opacity(0.6);
+}
+
+.header__button-right{
+    margin-left: auto;
+}
+
+.section__button {
     height: 5vh;
     width: auto;
     min-height: 60px;
@@ -52,13 +57,13 @@ html {
     padding: 30px;
 }
 
-.main_header__button-h1 {
+.header__button-h1 {
     font-size: 1.6rem;
 }
 
 /* Main Area */
 
-.main-gallery-view{
+.section{
     margin-left: 9vh;
 }
 
@@ -69,7 +74,7 @@ body {
     font-size: 3rem;
 }
 
-.grid-item {
+.section__article-figure {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -85,12 +90,12 @@ body {
     background-repeat: no-repeat;
 }
 
-.grid-item:hover {
+.section__article-figure:hover {
     filter: opacity(0.9);
     transform: scale(1.04);
 }
 
-.grid-container {
+.section__article {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-auto-rows: minmax(200px, auto);
@@ -100,7 +105,7 @@ body {
 
 /* Aside icon bar */
 
-.icon-bar {
+.aside {
     height: 100vh;
     width: 9vh;
     background-color: var(--light-dark);
@@ -109,16 +114,11 @@ body {
     left: 0;
     z-index: 1;
     margin-top: 9vh;
+    padding-top: 6vh;
     overflow-x: hidden;
 }
 
-.sidenav {
-    width: 160px;
-    background-color: #111;
-    padding-top: 20px;
-}
-
-.icon-bar button {
+.aside__button {
     height: 9vh;
     width: 9vh;
     min-height: 44px;
@@ -130,6 +130,6 @@ body {
     transition: all 0.3s ease;
 }
 
-button:hover {
-    background-color: #747a74;
+.aside__button:hover {
+    background-color: var(--middle-dark);
 }
