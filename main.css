@@ -139,6 +139,19 @@ body {
         margin-left: 9vh;
     }
 
+    /* .header__form-input {
+        font-size: 1.7rem;
+        border-radius: 5px;
+    } */
+
+    .aside {
+        width: 35vh;
+    }
+
+    .aside__div {
+        display: flex;
+    }
+
     .hidden {
         display: block;
     }
