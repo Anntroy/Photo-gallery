@@ -14,7 +14,7 @@ html {
 
 :root {
     --light-dark: rgb(237, 237, 237);
-    /* --light-dark-button: rgb(222, 222, 222); */
+    --white-title: rgb(248, 246, 246);
 }
 
 /* HEADER AREA */
@@ -24,24 +24,42 @@ html {
     font-size: 0.8rem;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-around;
-    align-items: flex-start;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 .main_header__button-right{
     margin-left: auto;
 }
 
-button {
+.icon_button {
     height: 9vh;
     width: 9vh;
     min-height: 44px;
     border: none;
-    background-color: var(--light-dark);
+    background-color: transparent;
+}
+
+.title_button {
+    height: 5vh;
+    width: auto;
+    min-height: 60px;
+    border: none;
+    background-color: transparent;
+    color: var(--white-title);
+    font-size: 1.1rem;
+    padding: 30px;
 }
 
 .main_header__button-h1 {
     font-size: 1.6rem;
+}
+
+/* Main Area */
+
+.main-gallery-view{
+    margin-left: 9vh;
 }
 
 /* Grid CSS */
@@ -55,6 +73,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: turquoise;
 
     background-color: #03afff;
     border: 1px black solid;
@@ -77,4 +96,40 @@ body {
     grid-auto-rows: minmax(200px, auto);
     gap: 10px;
     padding: 10px;
+}
+
+/* Aside icon bar */
+
+.icon-bar {
+    height: 100vh;
+    width: 9vh;
+    background-color: var(--light-dark);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    margin-top: 9vh;
+    overflow-x: hidden;
+}
+
+.sidenav {
+    width: 160px;
+    background-color: #111;
+    padding-top: 20px;
+}
+
+.icon-bar button {
+    height: 9vh;
+    width: 9vh;
+    min-height: 44px;
+    border: none;
+    background-color: transparent;
+    display: block;
+    text-align: center;
+    /* padding: 16px; */
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #747a74;
 }

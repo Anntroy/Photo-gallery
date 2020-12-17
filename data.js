@@ -1,16 +1,16 @@
 localStorage.setItem(
     "gallery",
     JSON.stringify([
-    { src: "assets/images/alfaz01.jpg", alt: "alfaz", keyword: "lighthouse", date: 1607698630012},
-    { src: "assets/images/alfaz02.jpg", alt: "alfaz", keyword: "lighthouse", date: 1607698630012},
-    { src: "assets/images/benidorm01.jpg", alt: "benidorm01.jpg", keyword: "beach", date: 1607698536006},
-    { src: "assets/images/cherniv01.jpg", alt: "cherniv01.jpg", keyword: "city", date: 1607698506014},
-    { src: "assets/images/cherniv02.jpg", alt: "cherniv02.jpg", keyword: "city", date: 1607698506014},
-    { src: "assets/images/cherniv03.jpg", alt: "cherniv03.jpg", keyword: "city", date: 1607698506014},
-    { src: "assets/images/cherniv04.jpg", alt: "cherniv04.jpg", keyword: "city", date: 1607698506014},
-    { src: "assets/images/paradise01.jpg", alt: "paradise01.jpg", keyword: "bicycle", date: 1607698616000},
-    { src: "assets/images/paradise02.jpg", alt: "paradise02.jpg", keyword: "bicycle", date: 1607698616000},
-    { src: "assets/images/paradise03.jpg", alt: "paradise03.jpg", keyword: "bicycle", date: 1607698616000},
-    { src: "assets/images/suances01.jpg", alt: "suances01", keyword: "sea", date: 1607698306042},
+    { src: "assets/img/anillos.png", alt: "alfaz", keyword: "lighthouse", date: "25 Mar 2018"},
+    { src: "assets/img/collares.png", alt: "alfaz", keyword: "lighthouse", date: "25 Mar 2018"},
+    { src: "assets/img/reloj.jpg", alt: "benidorm01.jpg", keyword: "beach", date: "25 Mar 2018"},
+    { src: "assets/img/diamantes.png", alt: "cherniv01.jpg", keyword: "city", date: "15 Dec 2019"},
+    { src: "assets/img/pendientes.png", alt: "cherniv02.jpg", keyword: "city", date: "15 Dec 2019"},
+    { src: "assets/img/collares.png", alt: "cherniv03.jpg", keyword: "city", date: "05 Dec 2020"},
+    { src: "assets/img/anillos.png", alt: "cherniv04.jpg", keyword: "city", date: "05 Dec 2020"},
+    { src: "assets/img/reloj.jpg", alt: "paradise01.jpg", keyword: "bicycle", date: "05 Dec 2020"},
+    { src: "assets/img/collares.png", alt: "paradise02.jpg", keyword: "bicycle", date: "05 Dec 2020"},
+    { src: "assets/img/diamantes.png", alt: "paradise03.jpg", keyword: "bicycle", date: "12 Nov 2020"},
+    { src: "assets/img/pendientes.png", alt: "suances01", keyword: "sea", date: "12 Nov 2020"},
 ])
 );
