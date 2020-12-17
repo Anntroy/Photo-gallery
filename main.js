@@ -1,6 +1,6 @@
 const get = document.getElementById.bind(document);
 const create = document.createElement.bind(document);
-const galleryContainer = get("section");
+const section = get("section");
 
 function createMainView(){
     gallery = JSON.parse(localStorage.getItem("gallery"))
@@ -8,6 +8,21 @@ function createMainView(){
         console.log(photo.date)
     }
 }
+
+// function createAside(){
+//     let section = get('section');
+//     let aside = create('ASIDE');
+//     aside.setAttribute('id', 'aside');
+//     aside.setAttribute('class', 'aside');
+//     section.appendChild(aside);
+//     return aside
+// }
+
+// function removeAside(){
+//     let section = get('section');
+//     let aside = get('aside');
+//     section.removeChild(aside);
+// }
 
 // function createGalleryHtml(){
 
