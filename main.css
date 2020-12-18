@@ -24,10 +24,14 @@ html {
     height: 9vh;
     font-size: 0.8rem;
     display: flex;
-    flex-flow: row nowrap;
     position: sticky;
     top: 0;
     z-index: 1;
+}
+
+.header__article {
+    margin-left: auto;
+    display: flex;
 }
 
 .header__button {
@@ -42,10 +46,6 @@ html {
 
 .header__button:hover {
     filter: opacity(0.6);
-}
-
-.header__button-right{
-    margin-left: auto;
 }
 
 .section__button {
@@ -105,7 +105,7 @@ body {
 
 .aside {
     height: 100vh;
-    width: 9vh;
+    width: 10vh;
     background-color: var(--light-dark);
     position: fixed;
     top: 0;
@@ -143,7 +143,30 @@ body {
 
 @media (min-width: 600px) {
     .section {
-        margin-left: 9vh;
+        margin-left: 10vh;
+    }
+
+    .header__button {
+        width: 10vh;
+    }
+
+    .title {
+        width: 22vh;
+    }
+
+    .header__button-h1 {
+        font-size: 1.7rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    .header__button-user {
+        width: 15vh;
+        background-color: transparent;
+        min-height: 44px;
+        border: none;
+        cursor: pointer;
+        outline: none;
     }
 
     .hidden {
@@ -165,13 +188,21 @@ body {
         border-radius: 5px;
     }
 
+    .aside__button {
+        width: 10vh;
+    }
+
     .aside__div-button-h1 {
         text-align: left;
         font-size: 1.6rem;
     }
-    /* .header__form-input {
-        font-size: 1.7rem;
-        border-radius: 5px;
-    } */
+}
 
+@media (min-width: 1000px) {
+    .header__form-input {
+        font-size: 2rem;
+        border-radius: 5px;
+        border: none;
+        padding-left: 1vw;
+    }
 }
