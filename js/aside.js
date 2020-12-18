@@ -1,8 +1,5 @@
 function openSideBar(){
-    const toggle = get('header_toggle');
-    const aside = get('aside');
-    toggle.addEventListener('click', function(){
-        console.log(aside.classList);
+    headerToggle.addEventListener('click', function(){
         aside.classList.toggle('open');
         if(aside.classList.contains('open')){
             aside.innerHTML = `<div class="aside__div">
@@ -32,9 +29,3 @@ function openSideBar(){
 };
 
 openSideBar();
-
-// if (window.matchMedia("(min-width: 400px)").matches) {
-//     /* La pantalla tiene al menos 400 píxeles de ancho */
-// } else {
-//     /* La pantalla tiene menos de 400 píxeles de ancho */
-// }

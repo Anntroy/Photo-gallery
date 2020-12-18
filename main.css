@@ -31,6 +31,7 @@ html {
 
 .header__article {
     margin-left: auto;
+    display: flex;
 }
 
 .header__button {
@@ -160,7 +161,12 @@ body {
     }
 
     .header__button-user {
-        width: 20vh;
+        width: 15vh;
+        background-color: transparent;
+        min-height: 44px;
+        border: none;
+        cursor: pointer;
+        outline: none;
     }
 
     .hidden {
@@ -193,8 +199,10 @@ body {
 }
 
 @media (min-width: 1000px) {
-    /* .header__form-input {
-        font-size: 1.7rem;
+    .header__form-input {
+        font-size: 2rem;
         border-radius: 5px;
-    } */
+        border: none;
+        padding-left: 1vw;
+    }
 }
