@@ -35,6 +35,8 @@ html {
     width: 9vh;
     min-height: 44px;
     border: none;
+    cursor: pointer;
+    outline: none;
     background-color: transparent;
 }
 
@@ -51,6 +53,8 @@ html {
     width: auto;
     min-height: 60px;
     border: none;
+    cursor: pointer;
+    outline: none;
     background-color: transparent;
     color: var(--white-title);
     font-size: 1.1rem;
@@ -117,6 +121,8 @@ body {
     width: 9vh;
     min-height: 44px;
     border: none;
+    cursor: pointer;
+    outline: none;
     background-color: transparent;
     display: block;
     text-align: center;
@@ -126,6 +132,7 @@ body {
 
 .aside__button:hover {
     background-color: var(--middle-dark);
+    border-radius: 5px;
 }
 
 .hidden {
@@ -135,11 +142,36 @@ body {
 /* Media Queries */
 
 @media (min-width: 600px) {
-    .section{
+    .section {
         margin-left: 9vh;
     }
 
     .hidden {
         display: block;
     }
+
+    .open {
+        width: 35vh;
+        text-align: left;
+    }
+
+    .aside__div {
+        display: flex;
+        margin: 0 3px;
+    }
+
+    .aside__div:hover {
+        background-color: var(--middle-dark);
+        border-radius: 5px;
+    }
+
+    .aside__div-button-h1 {
+        text-align: left;
+        font-size: 1.6rem;
+    }
+    /* .header__form-input {
+        font-size: 1.7rem;
+        border-radius: 5px;
+    } */
+
 }
