@@ -24,10 +24,13 @@ html {
     height: 9vh;
     font-size: 0.8rem;
     display: flex;
-    flex-flow: row nowrap;
     position: sticky;
     top: 0;
     z-index: 1;
+}
+
+.header__article {
+    margin-left: auto;
 }
 
 .header__button {
@@ -42,10 +45,6 @@ html {
 
 .header__button:hover {
     filter: opacity(0.6);
-}
-
-.header__button-right{
-    margin-left: auto;
 }
 
 .section__button {
@@ -160,6 +159,10 @@ body {
         letter-spacing: 1px;
     }
 
+    .header__button-user {
+        width: 20vh;
+    }
+
     .hidden {
         display: block;
     }
@@ -168,10 +171,6 @@ body {
         width: 35vh;
         text-align: left;
     }
-
-    /* .aside {
-        width: 10vh;
-    } */
 
     .aside__div {
         display: flex;
@@ -191,9 +190,11 @@ body {
         text-align: left;
         font-size: 1.6rem;
     }
+}
+
+@media (min-width: 1000px) {
     /* .header__form-input {
         font-size: 1.7rem;
         border-radius: 5px;
     } */
-
 }
