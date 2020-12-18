@@ -35,6 +35,8 @@ html {
     width: 9vh;
     min-height: 44px;
     border: none;
+    cursor: pointer;
+    outline: none;
     background-color: transparent;
 }
 
@@ -51,6 +53,8 @@ html {
     width: auto;
     min-height: 60px;
     border: none;
+    cursor: pointer;
+    outline: none;
     background-color: transparent;
     color: var(--white-title);
     font-size: 1.1rem;
@@ -117,8 +121,9 @@ body {
     width: 9vh;
     min-height: 44px;
     border: none;
+    cursor: pointer;
+    outline: none;
     background-color: transparent;
-    margin-right: 3px;
     display: block;
     text-align: center;
     /* padding: 16px; */
@@ -152,7 +157,7 @@ body {
 
     .aside__div {
         display: flex;
-        margin-right: 3px;
+        margin: 0 3px;
     }
 
     .aside__div:hover {
