@@ -3,7 +3,9 @@ const create = document.createElement.bind(document);
 const section = get("section");
 const headerToggle = get('headerToggle');
 const headerRight = get('headerRight');
+const signUp = get('signUp');
 const aside = get('aside');
+const modal = get('modal');
 
 function initResponsiveTopBar(){
     window.addEventListener('load', function(){
