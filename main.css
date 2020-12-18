@@ -105,7 +105,7 @@ body {
 
 .aside {
     height: 100vh;
-    width: 9vh;
+    width: 10vh;
     background-color: var(--light-dark);
     position: fixed;
     top: 0;
@@ -143,7 +143,21 @@ body {
 
 @media (min-width: 600px) {
     .section {
-        margin-left: 9vh;
+        margin-left: 10vh;
+    }
+
+    .header__button {
+        width: 10vh;
+    }
+
+    .title {
+        width: 22vh;
+    }
+
+    .header__button-h1 {
+        font-size: 1.7rem;
+        font-weight: 700;
+        letter-spacing: 1px;
     }
 
     .hidden {
@@ -155,6 +169,10 @@ body {
         text-align: left;
     }
 
+    /* .aside {
+        width: 10vh;
+    } */
+
     .aside__div {
         display: flex;
         margin: 0 3px;
@@ -163,6 +181,10 @@ body {
     .aside__div:hover {
         background-color: var(--middle-dark);
         border-radius: 5px;
+    }
+
+    .aside__button {
+        width: 10vh;
     }
 
     .aside__div-button-h1 {
