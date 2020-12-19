@@ -12,12 +12,42 @@
         <button class="header__button" id="headerToggle" href="#"><i class="fa fa-bars fa-lg"></i></button>
         <button  class="header__button title" id="title" href="#"><h1 class="header__button-h1">Photo Gallery</h1></button>
         <article class="header__article" id="headerRight">
-            <button  class="header__button " href="#"><i class="fa fa-search"></i></button>
-            <button  class="header__button-user hidden" href="#"><h3 class="header__button-h3">Sign In</h3></button>
-            <button  class="header__button-user hidden" href="#"><h3 class="header__button-h3">Sign Up</h3></button>
+            <form class="" action="">
+                <input class="header__form-input hidden" type="text" placeholder="Search.." name="search">
+                <button  class="header__button" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            <!-- <button  class="header__button " href="#"><i class="fa fa-search"></i></button> -->
+            <button  class="header__button-user hidden" id="signIn" href="#"><h3 class="header__button-h3">Sign In</h3></button>
+            <button  class="header__button-user hidden" id="signUp"><h3 class="header__button-h3">Sign Up</h3></button>
         </article>
     </header>
+    <aside class="modal hidden" id="modal">
+        <form class="modal__form">
+            <div class="modal__form-div">
+                <h2 class="modal__form-div-h2">Sign Up</h2>
+                <hr>
+                <label class="modal__form-div-label" for="email"><b>Email</b></label>
+                <input class="modal__form-div-input" type="text" placeholder="Enter Email" name="email" required>
+
+                <label class="modal__form-div-label" for="psw"><b>Password</b></label>
+                <input class="modal__form-div-input" type="password" placeholder="Enter Password" name="psw" required>
+
+                <label class="modal__form-div-label" for="psw-repeat"><b>Repeat Password</b></label>
+                <input class="modal__form-div-input" type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                <div class="clearfix">
+                <button type="button" class="btn cancelbtn" id="cancelbtn">Cancel</button>
+                <button type="submit" class="btn signupbtn" id="signupbtn">Sign Up</button>
+                </div>
+            </div>
+        </form>
+    </aside>
     <main>
+        <aside class="aside hidden" id="aside">
+            <button class="aside__button" href="#"><i class="fa fa-image fa-lg"></i></button>
+            <button class="aside__button" href="#"><i class="fa fa-envelope fa-lg"></i></button>
+            <button class="aside__button" href="#"><i class="fa fa-globe fa-lg"></i></button>
+            <button class="aside__button" href="#"><i class="fa fa-trash fa-lg"></i></button>
+        </aside>
         <section class="section" id="section">
             <button type="button" class="section__button"><h2 class="header__button-h2">05 Dec 2020</h1></button>
             <article class="section__article">
@@ -46,17 +76,11 @@
                     <figure class="section__article-figure" style="background-image: url('assets/img/collares.png');"></figure>
                 </article>
         </section>
-        <aside class="aside hidden" id="aside">
-            <button class="aside__button" href="#"><i class="fa fa-image fa-lg"></i></button>
-            <button class="aside__button" href="#"><i class="fa fa-envelope fa-lg"></i></button>
-            <button class="aside__button" href="#"><i class="fa fa-globe fa-lg"></i></button>
-            <button class="aside__button" href="#"><i class="fa fa-trash fa-lg"></i></button>
-        </aside>
     </main>
     <script src="main.js"></script>
-    <!-- <script src="js/utilites.js"></script> -->
     <script src="js/data.js"></script>
     <script src="js/header.js"></script>
     <script src="js/aside.js"></script>
+    <script src="js/signUp.js"></script>
 </body>
 </html>
