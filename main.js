@@ -5,10 +5,12 @@ const headerToggle = get('headerToggle');
 const headerRight = get('headerRight');
 const aside = get('aside');
 const modal = get('modal');
-const signIn = get('signIn');
-const signUp = get('signUp');
+const logIn = get('logIn');
 const cancelbtn = get('cancelbtn');
-const signupbtn = get('signupbtn');
+const loginbtn = get('loginbtn');
+const username = document.getElementById('username');
+const password = document.getElementById('password');
+const usernameInputError = document.getElementById("usernameInputError");
 
 
 function initResponsiveTopBar(){
@@ -16,14 +18,12 @@ function initResponsiveTopBar(){
         if (window.matchMedia("(min-width: 600px)").matches) {
             title.innerHTML = `<h1 class="header__button-h1">Photo Gallery</h1>`;
             aside.classList.remove('hidden');
-            signUp.classList.remove('hidden');
-            signIn.classList.remove('hidden');
+            logIn.classList.remove('hidden');
         }
         else {
             title.innerHTML = `<h1 class="header__button-h1">Photo</h1>`;
             aside.classList.add('hidden');
-            signUp.classList.add('hidden');
-            signIn.classList.add('hidden');
+            logIn.classList.add('hidden');
         }
         // if (window.matchMedia("(min-width: 1000px)").matches) {
         //     headerRight.innerHTML = `<form class="" action="">

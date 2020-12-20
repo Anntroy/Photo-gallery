@@ -9,7 +9,7 @@ function closeSignUpModal(){
     cancelbtn.addEventListener('click', function(){
         modal.classList.add('hidden');
     });
-    signupbtn.addEventListener('click', function(){
+    loginbtn.addEventListener('click', function(){
         modal.classList.add('hidden');
     });
 }
