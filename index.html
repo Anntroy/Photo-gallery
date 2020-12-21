@@ -24,10 +24,16 @@
             <div class="modal__form-div">
                 <h2 class="modal__form-div-h2">Log In</h2>
                 <hr>
-                <label class="modal__form-div-label" for="username"><b>Username</b></label>
-                <input class="modal__form-div-input" type="text" placeholder="Enter Username" id="username" pattern="[a-z]{5,15}" title="Invalid username" required>
-                <label class="modal__form-div-label" for="psw"><b>Password</b></label>
-                <input class="modal__form-div-input" type="password" placeholder="Enter Password" id="password" required>
+                <div class="modal__form-div-div">
+                    <label class="modal__form-div-label" for="username"><b>Username</b></label>
+                    <input class="modal__form-div-input" type="text" placeholder="Enter Username" id="username" pattern="[a-z]{5,12}" required>
+                    <button class="invalid-input hidden" id="invalidUsername">Username should contain 5 to 12 lowercase letters</button>
+                </div>
+                <div class="modal__form-div-div">
+                    <label class="modal__form-div-label" for="psw"><b>Password</b></label>
+                    <input class="modal__form-div-input" type="password" placeholder="Enter Password" id="password" pattern="[A-Za-z0-9!?-]{8,12}" required>
+                    <button class="invalid-input hidden" id="invalidPassword">Password should contain 8 to 12 uppercase or lowercase letters, numbers and characters !?-</span>
+                </div>
                 <div class="clearfix">
                     <button type="button" class="btn cancelbtn" id="cancelbtn">Cancel</button>
                     <button type="submit" class="btn loginbtn" id="loginbtn">Log In</button>
@@ -43,31 +49,19 @@
             <button class="aside__button" href="#"><i class="fa fa-trash fa-lg"></i></button>
         </aside>
         <section class="section" id="section">
-            <button type="button" class="section__button"><h2 class="header__button-h2">05 Dec 2020</h1></button>
+            <!-- <button type="button" class="section__button"><h2 class="header__button-h2">05 Dec 2020</h1></button>
             <article class="section__article">
-                <figure class="section__article-figure" style="background-image: url('assets/img/anillos.png');"></figure>
-                <figure class="section__article-figure" style="background-image: url('assets/img/diamantes.png');"></figure>
-                <figure class="section__article-figure" style="background-image: url('assets/img/anillos.png');"></figure>
-                <figure class="section__article-figure" style="background-image: url('assets/img/pendientes.png');"></figure>
-                <figure class="section__article-figure" style="background-image: url('assets/img/anillos.png');"></figure>
-                <figure class="section__article-figure" style="background-image: url('assets/img/pulsera.jpg');"></figure>
-                <figure class="section__article-figure" style="background-image: url('assets/img/anillos.png');"></figure>
-                <figure class="section__article-figure" style="background-image: url('assets/img/reloj.jpg');"></figure>
-                <figure class="section__article-figure" style="background-image: url('assets/img/collares.png');"></figure>
-            </article>
-            <button type="button" class="section__button"><h2 class="header__button-h2">10 Dec 2020</h1></button>
-                <article class="section__article">
-                    <figure class="section__article-figure" style="background-image: url('assets/img/anillos.png');"></figure>
-                    <figure class="section__article-figure" style="background-image: url('assets/img/collares.png');"></figure>
-                    <figure class="section__article-figure" style="background-image: url('assets/img/diamantes.png');"></figure>
-                    <figure class="section__article-figure" style="background-image: url('assets/img/anillos.png');"></figure>
-                    <figure class="section__article-figure" style="background-image: url('assets/img/pendientes.png');"></figure>
-                    <figure class="section__article-figure" style="background-image: url('assets/img/anillos.png');"></figure>
-                    <figure class="section__article-figure" style="background-image: url('assets/img/pulsera.jpg');"></figure>
-                    <figure class="section__article-figure" style="background-image: url('assets/img/anillos.png');"></figure>
-                    <figure class="section__article-figure" style="background-image: url('assets/img/reloj.jpg');"></figure>
-                    <figure class="section__article-figure" style="background-image: url('assets/img/collares.png');"></figure>
-                </article>
+                <figure class="section__article-figure" style="background-image: url('assets/img/new-york-09.jpg');"></figure>
+                <figure class="section__article-figure" style="background-image: url('assets/img/new-york-01.jpg');"></figure>
+                <figure class="section__article-figure" style="background-image: url('assets/img/new-york-11.jpg');"></figure>
+                <figure class="section__article-figure" style="background-image: url('assets/img/new-york-02.jpg');"></figure>
+                <figure class="section__article-figure" style="background-image: url('assets/img/new-york-05.jpg');"></figure>
+                <figure class="section__article-figure" style="background-image: url('assets/img/new-york-04.jpg');"></figure>
+                <figure class="section__article-figure" style="background-image: url('assets/img/new-york-03.jpg');"></figure>
+                <figure class="section__article-figure" style="background-image: url('assets/img/new-york-06.jpg');"></figure>
+                <figure class="section__article-figure" style="background-image: url('assets/img/new-york-07.jpg');"></figure>
+                <figure class="section__article-figure" style="background-image: url('assets/img/new-york-08.jpg');"></figure>
+            </article> -->
         </section>
     </main>
     <script src="main.js"></script>
