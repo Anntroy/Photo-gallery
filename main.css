@@ -16,6 +16,7 @@ html {
     --light-dark: rgb(223, 219, 219);
     --middle-dark: rgb(172, 165, 165);
     --white-title: rgb(248, 246, 246);
+    --red-error: rgb(173, 32, 32);
 }
 
 /* HEADER AREA */
@@ -287,4 +288,12 @@ input[type=text]:focus, input[type=password]:focus {
         border: none;
         padding-left: 1vw;
     }
+}
+
+
+.invalid-input {
+    position: relative;
+    top: -1rem;
+    font-size: 1rem;
+    color: var(--red-error);
 }

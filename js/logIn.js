@@ -23,10 +23,19 @@ function cancelLogInModal(){
 closeLogInModal();
 
 cancelLogInModal();
-username.addEventListener('blur', throwInputError());
 
-function throwInputError(){
-    username.addEventListener('invalid', function(event){
-        event.target.setCustomValidity('Username must have 5 to 12 lowercase characters and no more than two digits at the end');
-    })
+function validateInput() {
+    'use strict';
+    username.addEventListener('blur', function(event) {
+        if (username.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+            invalidInput.classList.remove('hidden');
+            }
+        else {
+            invalidInput.classList.add('hidden');
+        }
+    });
 }
+
+validateInput()

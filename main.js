@@ -8,10 +8,12 @@ const modal = get('modal');
 const logIn = get('logIn');
 const cancelbtn = get('cancelbtn');
 const loginbtn = get('loginbtn');
-const username = document.getElementById('username');
-const password = document.getElementById('password');
-const usernameInputError = document.getElementById("usernameInputError");
+const username = get('username');
+const password = get('password');
+const usernameInputError = get("usernameInputError");
+const invalidInput = get("invalidInput");
 
+const galleryItems = JSON.parse(localStorage.getItem("gallery"));
 
 function initResponsiveTopBar(){
     window.addEventListener('load', function(){
@@ -38,9 +40,43 @@ function initResponsiveTopBar(){
 }
 
 initResponsiveTopBar();
-// function createMainView(){
-//     gallery = JSON.parse(localStorage.getItem("gallery"))
-//     for (let photo of gallery){
-//         console.log(photo.date)
-//     }
-// }
+
+function uniqueDateArray(){
+    let dateArray = [];
+    for (let photo of galleryItems){
+        dateArray.push(photo.date)
+    }
+    let uniqueDateArray = [...new Set(dateArray)]
+    return uniqueDateArray
+}
+
+uniqueDateArray();
+
+function createMainView(uniqueDateArray, dateButton){
+    let j = 0;
+    let galleryItemsArray = []
+    galleryItems.sort((a,b) => (Date.parse(a.date) > Date.parse(b.date)) ? -1 : ((Date.parse(b.date) > Date.parse(a.date)) ? 1 : 0));
+    // uniqueDateArray.forEach()
+    galleryItems.map((item) => galleryItemsArray.push(item.date))
+    galleryItemsArray.forEach((item) => {
+        dateButton.innerHTML = `${item}`;
+        dateButton.setAttribute("id", `${item}${j}`)
+        j++;
+        // console.log(dateButton, j)
+    })
+}
+
+createMainView(uniqueDateArray(), createDateButton());
+
+function createDateButton(){
+    let dateButton = create("button");
+    dateButton.setAttribute("type", "button");
+    dateButton.setAttribute("class", "section__button");
+    return dateButton;
+}
+
+function createDateButtonText(){
+    let dateButtonText = create("h2");
+    dateButtonText.setAttribute("class", "header__button-h2");
+    return dateButtonText;
+}
