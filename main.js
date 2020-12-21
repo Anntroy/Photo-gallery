@@ -10,8 +10,8 @@ const cancelbtn = get('cancelbtn');
 const loginbtn = get('loginbtn');
 const username = get('username');
 const password = get('password');
-const usernameInputError = get("usernameInputError");
-const invalidInput = get("invalidInput");
+const invalidUsername = get("invalidUsername");
+const invalidPassword = get("invalidPassword");
 
 const galleryItems = JSON.parse(localStorage.getItem("gallery"));
 

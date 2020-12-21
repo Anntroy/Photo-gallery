@@ -20,19 +20,19 @@
         </article>
     </header>
     <aside class="modal hidden" id="modal">
-        <form class="modal__form needs-validation">
+        <form class="modal__form">
             <div class="modal__form-div">
                 <h2 class="modal__form-div-h2">Log In</h2>
                 <hr>
-                <div>
+                <div class="modal__form-div-div">
                     <label class="modal__form-div-label" for="username"><b>Username</b></label>
-                    <input class="modal__form-div-input" type="text" placeholder="Enter Username" id="username" pattern="[a-z]{5,15}" title="Invalid username" required>
-                    <span class="invalid-input hidden" id="invalidInput">Username must have 5 to 12 lowercase characters</span>
+                    <input class="modal__form-div-input" type="text" placeholder="Enter Username" id="username" pattern="[a-z]{5,12}" required>
+                    <button class="invalid-input hidden" id="invalidUsername">Username should contain 5 to 12 lowercase letters</button>
                 </div>
-                <div>
+                <div class="modal__form-div-div">
                     <label class="modal__form-div-label" for="psw"><b>Password</b></label>
-                    <input class="modal__form-div-input" type="password" placeholder="Enter Password" id="password" required>
-                    <span class="invalid-input hidden">Username must have 5 to 12 lowercase characters</span>
+                    <input class="modal__form-div-input" type="password" placeholder="Enter Password" id="password" pattern="[A-Za-z0-9!?-]{8,12}" required>
+                    <button class="invalid-input hidden" id="invalidPassword">Password should contain 8 to 12 uppercase or lowercase letters, numbers and characters !?-</span>
                 </div>
                 <div class="clearfix">
                     <button type="button" class="btn cancelbtn" id="cancelbtn">Cancel</button>
