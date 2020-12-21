@@ -50,33 +50,31 @@ function uniqueDateArray(){
     return uniqueDateArray
 }
 
-uniqueDateArray();
+// uniqueDateArray();
 
-function createMainView(uniqueDateArray, dateButton){
+createMainView(uniqueDateArray());
+
+function createMainView(uniqueDateArray){
     let j = 0;
-    let galleryItemsArray = []
+    uniqueDateArray.sort((a,b) => (Date.parse(a) > Date.parse(b)) ? -1 : ((Date.parse(b) > Date.parse(a)) ? 1 : 0));
+    console.log(uniqueDateArray)
     galleryItems.sort((a,b) => (Date.parse(a.date) > Date.parse(b.date)) ? -1 : ((Date.parse(b.date) > Date.parse(a.date)) ? 1 : 0));
-    // uniqueDateArray.forEach()
-    galleryItems.map((item) => galleryItemsArray.push(item.date))
-    galleryItemsArray.forEach((item) => {
-        dateButton.innerHTML = `${item}`;
-        dateButton.setAttribute("id", `${item}${j}`)
+
+    uniqueDateArray.forEach(function(item){
+        section.innerHTML += `<button type="button" class="section__button"><h2 class="header__button-h2">${item}</h1></button>
+        <article class="section__article" id="section__article${j}">
+        </article>`
         j++;
-        // console.log(dateButton, j)
-    })
-}
+    });
 
-createMainView(uniqueDateArray(), createDateButton());
-
-function createDateButton(){
-    let dateButton = create("button");
-    dateButton.setAttribute("type", "button");
-    dateButton.setAttribute("class", "section__button");
-    return dateButton;
-}
-
-function createDateButtonText(){
-    let dateButtonText = create("h2");
-    dateButtonText.setAttribute("class", "header__button-h2");
-    return dateButtonText;
+    for(let i = 0; i < uniqueDateArray.length; i++){
+        let article = get(`section__article${i}`);
+        galleryItems.map(function(element){
+                    if(element.date === uniqueDateArray[i]){
+                        console.log(element.src)
+                        article.innerHTML += `
+                            <figure class="section__article-figure" style="background-image: url('${element.src}');"></figure>`
+                    }
+                })
+    }
 }

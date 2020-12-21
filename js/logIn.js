@@ -62,5 +62,4 @@ function validateInputOnSubmit(){
     return users
 }
 
-console.log(users)
 validateInputOnSubmit()
