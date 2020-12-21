@@ -23,7 +23,10 @@ function cancelLogInModal(){
 closeLogInModal();
 
 cancelLogInModal();
+username.addEventListener('blur', throwInputError());
 
-username.addEventListener('invalid', function(event){
-    event.target.setCustomValidity('Username must have 5 to 12 characters without spaces');
-})
+function throwInputError(){
+    username.addEventListener('invalid', function(event){
+        event.target.setCustomValidity('Username must have 5 to 12 lowercase characters and no more than two digits at the end');
+    })
+}
