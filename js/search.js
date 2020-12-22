@@ -35,9 +35,9 @@ function createOnSearchView(keyword){
         if (photos[i].className.indexOf(keyword) <= -1){
             photos[i].classList.add('hidden');
         }
-        else {
-            addRandomClass(photos[i])
-        }
+        // else {
+        //     addRandomClass(photos[i])
+        // }
     }
 }
 

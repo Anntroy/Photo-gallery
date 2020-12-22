@@ -18,6 +18,9 @@ const inputSearch = get("inputSearch");
 const search = get("search");
 const currantUser = get("currantUser");
 const logOut = get("logOut");
+const presentation = get("presentation");
+const trash = get("trash");
+const photo = get("photo");
 
 const galleryItems = JSON.parse(localStorage.getItem("gallery"));
 const usersArray = JSON.parse(localStorage.getItem("users"));
@@ -40,11 +43,19 @@ function initResponsiveTopBar(){
         }
         if (window.matchMedia("(min-width: 1000px)").matches) {
             inputSearch.classList.remove('hidden');
-            search.classList.add('hidden');
+            aside.classList.add('open');
+            photo.classList.remove('hidden');
+            presentation.classList.remove('hidden');
+            trash.classList.remove('hidden');
+            headerToggle.classList.add('hidden');
         }
         else {
             inputSearch.classList.add('hidden');
-            search.classList.remove('hidden');
+            aside.classList.remove('open');
+            photo.classList.add('hidden');
+            presentation.classList.add('hidden');
+            trash.classList.add('hidden');
+            headerToggle.classList.remove('hidden');
         }
     });
 }
@@ -65,11 +76,19 @@ function responsiveTopBar(){
         }
         if (window.matchMedia("(min-width: 1000px)").matches) {
             inputSearch.classList.remove('hidden');
-            search.classList.add('hidden');
+            aside.classList.add('open');
+            photo.classList.remove('hidden');
+            presentation.classList.remove('hidden');
+            trash.classList.remove('hidden');
+            headerToggle.classList.add('hidden');
         }
         else {
             inputSearch.classList.add('hidden');
-            search.classList.remove('hidden');
+            aside.classList.remove('open');
+            photo.classList.add('hidden');
+            presentation.classList.add('hidden');
+            trash.classList.add('hidden');
+            headerToggle.classList.remove('hidden');
         }
     });
 }
