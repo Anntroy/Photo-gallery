@@ -1,27 +1,27 @@
 
-function User(uname, upassword) {
-    this.userName = uname;
-    this.userPassword = upassword;
+class User{
+    constructor (uname, upassword) {
+        this.userName = uname;
+        this.userPassword = upassword;
+    }
 }
 
+function cancelLogInModal(){
+    closeLogInModal();
+};
+
+logIn.addEventListener('click', openLogInModal);
+cancelbtn.addEventListener('click', cancelLogInModal);
+
 function openLogInModal(){
-    logIn.addEventListener('click', function(){
         modal.classList.remove('hidden');
-    })
 }
-openLogInModal();
 
 function closeLogInModal(){
     modal.classList.add('hidden');
 };
 
-function cancelLogInModal(){
-    cancelbtn.addEventListener('click', function(){
-        closeLogInModal();
-    });
-};
 
-cancelLogInModal();
 
 function validateInput(input, invalidInput) {
     input.addEventListener('blur', function(event) {
@@ -39,18 +39,47 @@ function validateInput(input, invalidInput) {
 validateInput(username, invalidUsername);
 validateInput(password, invalidPassword);
 
-function validateInputOnSubmit(){
-    let inputs;
+function createNewUser(){
     let user = {};
-    form.addEventListener('submit', function() {
-        inputs = form.getElementsByTagName('input');
-        user = new User(`${inputs[0].value}`, `${inputs[1].value}`);
-        console.log(user)
-        users.push(Object.assign(user));
-        console.log(users)
-        return users
-    });
+    let currantUser = {};
+    user = new User(username.value, password.value);
+    currantUser = user;
+    usersArray.push(user);
+    localStorage.setItem("users", JSON.stringify(usersArray));
 }
 
+form.addEventListener('submit', validateInputOnSubmit);
 
-validateInputOnSubmit()
+function validateInputOnSubmit(e){
+    e.preventDefault();
+    if (usersArray.length === 0){
+        createNewUser();
+    }
+    else{
+        usersArray.forEach((item) => {
+            if(item.userName === username.value){
+                if(item.userPassword === password.value){
+                    modal.classList.add('hidden');
+                    currantUser.classList.remove('hidden');
+                    currantUser.innerHTML = `<h3 class="header__button-h3">${username.value}</h3>`;
+                    logIn.classList.add('hidden');
+                    logOut.classList.remove('hidden');
+                    return
+                }
+                else {
+                    invalidLoginPassword.classList.remove('hidden');
+                    return
+                }
+            }
+            else {
+                return
+            }
+        });
+        createNewUser();
+        modal.classList.add('hidden');
+        currantUser.classList.remove('hidden');
+        currantUser.innerHTML = `<h3 class="header__button-h3">${username.value}</h3>`;
+        logIn.classList.add('hidden');
+        logOut.classList.remove('hidden');
+    }
+};
