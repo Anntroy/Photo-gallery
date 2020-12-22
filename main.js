@@ -85,7 +85,7 @@ function uniqueDateArray(){
     return uniqueDateArray
 }
 
-createMainView(uniqueDateArray());
+window.addEventListener('load', createMainView(uniqueDateArray()))
 
 function createMainView(uniqueDateArray){
     let j = 0;
@@ -104,19 +104,8 @@ function createMainView(uniqueDateArray){
         galleryItems.map(function(element){
                     if(element.date === uniqueDateArray[i]){
                         article.innerHTML += `
-                            <figure class="section__article-figure" style="background-image: url('${element.src}');"></figure>`
+                            <figure class="section__article-figure ${element.keyword} " style="background-image: url('${element.src}');"></figure>`
                     }
                 })
     }
-}
-
-filterSelection("all")
-function filterSelection(c) {
-    var x, i;
-    x = document.getElementsByClassName("filterDiv");
-    if (c == "all") c = "";
-    for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-}
 }

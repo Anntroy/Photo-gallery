@@ -46,8 +46,9 @@ html {
     font-size: 1.4rem;
     border-radius: 5px;
     border: none;
-    padding: 0 1vw;
-    margin: 0 5vw;
+    padding: 0 2vw;
+    margin-left: 2vw;
+    margin-right: -3vw;
 }
 
 .header__button {
@@ -112,6 +113,7 @@ body {
     grid-auto-rows: minmax(200px, auto);
     gap: 10px;
     padding: 10px;
+    grid-auto-flow: dense;
 }
 
 /* Aside icon bar */
@@ -266,6 +268,14 @@ input[type=text]:focus, input[type=password]:focus {
         margin-left: 10vh;
     }
 
+    .wide {
+        grid-column: span 2;
+    }
+
+    .tall {
+        grid-row: span 2;
+    }
+
     .header__button {
         width: 10vh;
     }
@@ -287,6 +297,13 @@ input[type=text]:focus, input[type=password]:focus {
         border: none;
         cursor: pointer;
         outline: none;
+    }
+
+    .header__form-input {
+        height: 3.5vh;
+        width: 35vh;
+        font-size: 1.5rem;
+        margin-right: 0.5vw;
     }
 
     .open {
