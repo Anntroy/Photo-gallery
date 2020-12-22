@@ -1,11 +1,8 @@
-let users = [];
 
-class User {
-    constructor(uname, upassword) {
-        this.userName = uname;
-        this.userPassword = upassword;
-    }
-};
+function User(uname, upassword) {
+    this.userName = uname;
+    this.userPassword = upassword;
+}
 
 function openLogInModal(){
     logIn.addEventListener('click', function(){
@@ -24,8 +21,6 @@ function cancelLogInModal(){
     });
 };
 
-closeLogInModal();
-
 cancelLogInModal();
 
 function validateInput(input, invalidInput) {
@@ -34,10 +29,9 @@ function validateInput(input, invalidInput) {
             event.preventDefault();
             event.stopPropagation();
             invalidInput.classList.remove('hidden');
-            }
+        }
         else {
             invalidInput.classList.add('hidden');
-            input.setAttribute(`data-${input}`, `${input.value}`);
         }
     });
 }
@@ -46,20 +40,17 @@ validateInput(username, invalidUsername);
 validateInput(password, invalidPassword);
 
 function validateInputOnSubmit(){
-    let user;
-    loginbtn.addEventListener('submit', function(event) {
-        if ((username.checkValidity() === false) || (password.checkValidity() === false)) {
-            event.preventDefault();
-            event.stopPropagation();
-            // invalid.classList.remove('hidden');
-            }
-        else {
-            event.preventDefault();
-            event.stopPropagation();
-            // user = new User(`${username.value}`, `${password.value}`);
-        }
+    let inputs;
+    let user = {};
+    form.addEventListener('submit', function() {
+        inputs = form.getElementsByTagName('input');
+        user = new User(`${inputs[0].value}`, `${inputs[1].value}`);
+        console.log(user)
+        users.push(Object.assign(user));
+        console.log(users)
+        return users
     });
-    return users
 }
+
 
 validateInputOnSubmit()

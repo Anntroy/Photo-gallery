@@ -5,6 +5,7 @@ const headerToggle = get('headerToggle');
 const headerRight = get('headerRight');
 const aside = get('aside');
 const modal = get('modal');
+const form = get('form');
 const logIn = get('logIn');
 const cancelbtn = get('cancelbtn');
 const loginbtn = get('loginbtn');
@@ -14,6 +15,9 @@ const invalidUsername = get("invalidUsername");
 const invalidPassword = get("invalidPassword");
 
 const galleryItems = JSON.parse(localStorage.getItem("gallery"));
+let users = [];
+let userIndex = 0;
+
 
 function initResponsiveTopBar(){
     window.addEventListener('load', function(){
@@ -57,7 +61,7 @@ createMainView(uniqueDateArray());
 function createMainView(uniqueDateArray){
     let j = 0;
     uniqueDateArray.sort((a,b) => (Date.parse(a) > Date.parse(b)) ? -1 : ((Date.parse(b) > Date.parse(a)) ? 1 : 0));
-    console.log(uniqueDateArray)
+    // console.log(uniqueDateArray)
     galleryItems.sort((a,b) => (Date.parse(a.date) > Date.parse(b.date)) ? -1 : ((Date.parse(b.date) > Date.parse(a.date)) ? 1 : 0));
 
     uniqueDateArray.forEach(function(item){
@@ -71,7 +75,7 @@ function createMainView(uniqueDateArray){
         let article = get(`section__article${i}`);
         galleryItems.map(function(element){
                     if(element.date === uniqueDateArray[i]){
-                        console.log(element.src)
+                        // console.log(element.src)
                         article.innerHTML += `
                             <figure class="section__article-figure" style="background-image: url('${element.src}');"></figure>`
                     }
