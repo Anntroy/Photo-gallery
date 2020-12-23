@@ -21,24 +21,30 @@ const logOut = get("logOut");
 const presentation = get("presentation");
 const trash = get("trash");
 const photo = get("photo");
+const asideLogIn = get("asideLogIn");
+const asideDiv = get("asideDiv");
+
 
 const galleryItems = JSON.parse(localStorage.getItem("gallery"));
-const usersArray = JSON.parse(localStorage.getItem("users"));
 
 let users = [];
+localStorage.setItem("users", JSON.stringify(users));
 let userIndex = 0;
 
+const usersArray = JSON.parse(localStorage.getItem("users"));
 
 function initResponsiveTopBar(){
     window.addEventListener('load', function(){
         if (window.matchMedia("(min-width: 600px)").matches) {
             title.innerHTML = `<h1 class="header__button-h1">Photo Gallery</h1>`;
-            aside.classList.remove('hidden');
+            // aside.classList.remove('hidden');
+            asideDiv.classList.add('hidden');
             logIn.classList.remove('hidden');
         }
         else {
             title.innerHTML = `<h1 class="header__button-h1">Photo</h1>`;
             aside.classList.add('hidden');
+            asideLogIn.classList.remove('hidden');
             logIn.classList.add('hidden');
         }
         if (window.matchMedia("(min-width: 1000px)").matches) {
@@ -67,12 +73,26 @@ function responsiveTopBar(){
         if (window.matchMedia("(min-width: 600px)").matches) {
             title.innerHTML = `<h1 class="header__button-h1">Photo Gallery</h1>`;
             aside.classList.remove('hidden');
-            logIn.classList.remove('hidden');
+            asideLogIn.classList.add('hidden');
+            asideDiv.classList.add('hidden');
+            if(currantUser.classList.contains('hidden')){
+                logIn.classList.remove('hidden');
+            }
+            else {
+                logOut.classList.remove('hidden');
+            }
         }
         else {
             title.innerHTML = `<h1 class="header__button-h1">Photo</h1>`;
             aside.classList.add('hidden');
-            logIn.classList.add('hidden');
+            asideDiv.classList.remove('hidden');
+            asideLogIn.classList.remove('hidden');
+            if(currantUser.classList.contains('hidden')){
+                logIn.classList.add('hidden');
+            }
+            else {
+                logOut.classList.add('hidden');
+            }
         }
         if (window.matchMedia("(min-width: 1000px)").matches) {
             inputSearch.classList.remove('hidden');
@@ -88,6 +108,7 @@ function responsiveTopBar(){
             photo.classList.add('hidden');
             presentation.classList.add('hidden');
             trash.classList.add('hidden');
+            asideLogIn.classList.remove('hidden');
             headerToggle.classList.remove('hidden');
         }
     });

@@ -11,6 +11,7 @@ function cancelLogInModal(){
 };
 
 logIn.addEventListener('click', openLogInModal);
+asideLogIn.addEventListener('click', clickAsideLogIn);
 cancelbtn.addEventListener('click', cancelLogInModal);
 
 function openLogInModal(){
@@ -20,6 +21,11 @@ function openLogInModal(){
 function closeLogInModal(){
     modal.classList.add('hidden');
 };
+
+function clickAsideLogIn(){
+    aside.classList.add('hidden');
+    openLogInModal();
+}
 
 
 
@@ -51,6 +57,7 @@ function createNewUser(){
 form.addEventListener('submit', validateInputOnSubmit);
 
 function validateInputOnSubmit(e){
+    let flag = false;
     e.preventDefault();
     if (usersArray.length === 0){
         createNewUser();
@@ -67,6 +74,7 @@ function validateInputOnSubmit(e){
                     return
                 }
                 else {
+                    flag = true;
                     invalidLoginPassword.classList.remove('hidden');
                     return
                 }
@@ -75,11 +83,16 @@ function validateInputOnSubmit(e){
                 return
             }
         });
+    }
+    if(flag){
         createNewUser();
         modal.classList.add('hidden');
         currantUser.classList.remove('hidden');
         currantUser.innerHTML = `<h3 class="header__button-h3">${username.value}</h3>`;
         logIn.classList.add('hidden');
         logOut.classList.remove('hidden');
+    }
+    else {
+        return
     }
 };
