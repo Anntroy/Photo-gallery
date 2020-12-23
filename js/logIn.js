@@ -84,7 +84,13 @@ function validateInputOnSubmit(e){
             currantUser.classList.remove('hidden');
             currantUser.innerHTML = `<h3 class="header__button-h3"><i class="fa fa-user-circle"></i><span class="tab"></span>${username.value}</h3>`;
             logIn.classList.add('hidden');
-            logOut.classList.remove('hidden');
+            if(window.matchMedia("(max-width: 600px)").matches){
+                asideDivLogOut.classList.remove('hidden');
+            }
+            else {
+                logOut.classList.remove('hidden');
+                asideDivLogOut.classList.add('hidden');
+            }
         }
         else {
             invalidLoginPassword.classList.remove('hidden');
@@ -96,6 +102,12 @@ function validateInputOnSubmit(e){
         currantUser.classList.remove('hidden');
         currantUser.innerHTML = `<h3 class="header__button-h3"><i class="fa fa-user-circle"></i><span class="tab"></span>${username.value}</h3>`;
         logIn.classList.add('hidden');
-        logOut.classList.remove('hidden');
+        if(window.matchMedia("(max-width: 600px)").matches){
+            asideDivLogOut.classList.remove('hidden');
+        }
+        else {
+            logOut.classList.remove('hidden');
+            asideDivLogOut.classList.add('hidden');
+        }
     }
 };

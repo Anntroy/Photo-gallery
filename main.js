@@ -36,7 +36,6 @@ function initResponsiveTopBar(){
     window.addEventListener('load', function(){
         if (window.matchMedia("(min-width: 600px)").matches) {
             title.innerHTML = `<h1 class="header__button-h1">Photo Gallery</h1>`;
-            // aside.classList.remove('hidden');
             asideDivLogIn.classList.add('hidden');
             asideDivLogOut.classList.add('hidden');
             logIn.classList.remove('hidden');
@@ -45,8 +44,9 @@ function initResponsiveTopBar(){
             title.innerHTML = `<h1 class="header__button-h1">Photo</h1>`;
             aside.classList.add('hidden');
             asideLogIn.classList.remove('hidden');
-            asideLogOut.classList.remove('hidden');
+            asideDivLogOut.classList.add('hidden');
             logIn.classList.add('hidden');
+            logOut.classList.add('hidden')
         }
         if (window.matchMedia("(min-width: 1000px)").matches) {
             inputSearch.classList.remove('hidden');
@@ -92,6 +92,7 @@ function responsiveTopBar(){
             asideDivLogIn.classList.remove('hidden');
             asideLogIn.classList.remove('hidden');
             asideLogOut.classList.remove('hidden');
+            logOut.classList.add('hidden')
             if(currantUser.classList.contains('hidden')){
                 logIn.classList.add('hidden');
                 logOut.classList.add('hidden');
