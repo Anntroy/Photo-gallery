@@ -3,7 +3,7 @@ search.addEventListener('click', openInputSearch);
 function openInputSearch(e){
     e.preventDefault();
     if(inputSearch.classList.contains('hidden')){
-        if (window.matchMedia("(min-width: 370px)").matches) {
+        if (window.matchMedia("(min-width: 400px)").matches) {
             inputSearch.classList.remove('hidden');
             inputSearch.focus();
         }
@@ -11,6 +11,7 @@ function openInputSearch(e){
             inputSearch.classList.remove('hidden');
             inputSearch.focus();
             title.classList.add('hidden');
+            logOut.classList.add('hidden');
         }
     }
     else {
@@ -21,6 +22,7 @@ function openInputSearch(e){
             createOnSearchView(inputSearch.value);
         }
     }
+    inputSearch.value = "";
 }
 
 function createOnSearchView(keyword){
@@ -35,9 +37,6 @@ function createOnSearchView(keyword){
         if (photos[i].className.indexOf(keyword) <= -1){
             photos[i].classList.add('hidden');
         }
-        // else {
-        //     addRandomClass(photos[i])
-        // }
     }
 }
 

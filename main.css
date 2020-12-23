@@ -22,9 +22,6 @@ html {
 }
 
 /* HEADER AREA */
-/* .section {
-    background-color: white;
-} */
 
 .header{
     background: linear-gradient(360deg, #dee1e1 10%, #f4f4f4 360%);
@@ -39,6 +36,7 @@ html {
 .header__article {
     margin-left: auto;
     display: flex;
+    margin-right: 1vh;
 }
 
 .header__form {
@@ -65,6 +63,25 @@ html {
     cursor: pointer;
     outline: none;
     background-color: transparent;
+}
+
+#currantUser {
+    width: 13vh;
+}
+
+.tab {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.header__button-user {
+    height: 9vh;
+    width: 15vh;
+    background-color: transparent;
+    min-height: 44px;
+    border: none;
+    cursor: pointer;
+    outline: none;
 }
 
 .header__button:hover {
@@ -150,13 +167,37 @@ body {
 }
 
 .aside__button:hover {
-    /* background-color: var(--middle-dark); */
     filter: opacity(0.9);
     border-radius: 5px;
 }
 
+.aside__div {
+    display: flex;
+    margin: 0 3px;
+}
+
+.aside__div:hover {
+    background-color: var(--middle-dark);
+    filter: opacity(0.9);
+    border-radius: 5px;
+}
+
+.aside__div-button-h1 {
+    text-align: left;
+    font-size: 1.4rem;
+}
+
 .hidden {
     display: none;
+}
+
+.open {
+    width: 25vh;
+    text-align: left;
+}
+
+.hr {
+    color: var(--dark);
 }
 
 /* Modal Log In form */
@@ -211,7 +252,6 @@ hr {
 }
 
 input[type=text]:focus, input[type=password]:focus {
-    /* background-color: var(--middle-dark); */
     outline: none;
 }
 
@@ -280,6 +320,7 @@ input[type=text]:focus, input[type=password]:focus {
 
     .aside {
         width: 13vh;
+        margin-top: 12vh;
     }
 
     .section {
@@ -305,12 +346,8 @@ input[type=text]:focus, input[type=password]:focus {
     }
 
     .header__button-user {
+        height: 13vh;
         width: 15vh;
-        background-color: transparent;
-        min-height: 44px;
-        border: none;
-        cursor: pointer;
-        outline: none;
     }
 
     .header__button-user:hover {
@@ -327,17 +364,6 @@ input[type=text]:focus, input[type=password]:focus {
     .open {
         width: 39vh;
         text-align: left;
-    }
-
-    .aside__div {
-        display: flex;
-        margin: 0 3px;
-    }
-
-    .aside__div:hover {
-        background-color: var(--middle-dark);
-        filter: opacity(0.9);
-        border-radius: 5px;
     }
 
     .aside__button {
