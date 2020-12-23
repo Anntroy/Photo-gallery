@@ -15,11 +15,16 @@ asideLogIn.addEventListener('click', clickAsideLogIn);
 cancelbtn.addEventListener('click', cancelLogInModal);
 
 function openLogInModal(){
-        modal.classList.remove('hidden');
+    modal.classList.remove('hidden');
 }
 
 function closeLogInModal(){
     modal.classList.add('hidden');
+    invalidUsername.classList.add('hidden');
+    invalidPassword.classList.add('hidden');
+    invalidLoginPassword.classList.add('hidden');
+    username.value = "";
+    password.value = "";
 };
 
 function clickAsideLogIn(){
@@ -46,16 +51,16 @@ validateInput(password, invalidPassword);
 
 let usersArray = [];
 
+if(JSON.parse(localStorage.getItem("users")) === null){
+    localStorage.setItem('users', JSON.stringify([]));
+}
+else {
+    usersArray = JSON.parse(localStorage.getItem("users"));
+}
 
 function createNewUser(){
     console.log('creado')
     let user = {};
-    if(JSON.parse(localStorage.getItem("users")) === null){
-        localStorage.setItem('users', JSON.stringify(usersArray));
-    }
-    else {
-        usersArray = JSON.parse(localStorage.getItem("users"));
-    }
     user = new User(username.value, password.value);
     usersArray.push(user);
     localStorage.setItem("users", JSON.stringify(usersArray));
@@ -86,6 +91,8 @@ function validateInputOnSubmit(e){
             logIn.classList.add('hidden');
             if(window.matchMedia("(max-width: 600px)").matches){
                 asideDivLogOut.classList.remove('hidden');
+                asideLogOut.classList.remove('hidden');
+                asideDivLogIn.classList.add('hidden');
             }
             else {
                 logOut.classList.remove('hidden');
@@ -104,10 +111,17 @@ function validateInputOnSubmit(e){
         logIn.classList.add('hidden');
         if(window.matchMedia("(max-width: 600px)").matches){
             asideDivLogOut.classList.remove('hidden');
+            asideLogOut.classList.remove('hidden')
+            asideDivLogIn.classList.add('hidden');
         }
         else {
             logOut.classList.remove('hidden');
             asideDivLogOut.classList.add('hidden');
         }
     }
+    invalidUsername.classList.add('hidden');
+    invalidPassword.classList.add('hidden');
+    invalidLoginPassword.classList.add('hidden');
+    username.value = "";
+    password.value = "";
 };

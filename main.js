@@ -21,6 +21,7 @@ const logOut = get("logOut");
 const presentation = get("presentation");
 const trash = get("trash");
 const photo = get("photo");
+const photoDiv = get("photoDiv");
 const asideLogIn = get("asideLogIn");
 const asideLogOut = get("asideLogOut");
 const asideDivLogIn = get("asideDivLogIn");
@@ -91,13 +92,13 @@ function responsiveTopBar(){
             asideDivLogIn.classList.remove('hidden');
             asideDivLogIn.classList.remove('hidden');
             asideLogIn.classList.remove('hidden');
-            asideLogOut.classList.remove('hidden');
             logOut.classList.add('hidden')
             if(currantUser.classList.contains('hidden')){
                 logIn.classList.add('hidden');
                 logOut.classList.add('hidden');
             }
             else {
+                asideLogOut.classList.remove('hidden');
                 asideDivLogIn.classList.add('hidden');
                 asideDivLogOut.classList.remove('hidden');
             }

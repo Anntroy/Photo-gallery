@@ -23,3 +23,20 @@ function openSideBar(){
 };
 
 openSideBar();
+
+photoDiv.addEventListener('click',  resetMainView);
+
+function resetMainView(){
+    let photos;
+    let dateButtons;
+    photos = document.getElementsByClassName("section__article-figure");
+    dateButtons = document.querySelectorAll('.section__button');
+    for(let b = 0; b < dateButtons.length; b++){
+        dateButtons[b].classList.remove('hidden');
+    }
+    for(let p = 0; p < photos.length; p++){
+        photos[p].classList.remove('hidden');
+    }
+}
+
+// resetMainView()
