@@ -6,6 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
+    color: var(--dark);
 }
 
 html {
@@ -13,15 +14,20 @@ html {
 }
 
 :root {
-    --light-dark: rgb(223, 219, 219);
-    --middle-dark: rgb(172, 165, 165);
+    --light-dark: rgb(201,192,187);
+    --middle-dark:  #a5a7aa;
     --white-title: rgb(248, 246, 246);
     --red-error: rgb(173, 32, 32);
+    --dark: #282c34;
 }
 
 /* HEADER AREA */
+/* .section {
+    background-color: white;
+} */
+
 .header{
-    background-color: var(--light-dark);
+    background: linear-gradient(360deg, #dee1e1 10%, #f4f4f4 360%);
     height: 9vh;
     font-size: 0.8rem;
     display: flex;
@@ -46,8 +52,9 @@ html {
     font-size: 1.4rem;
     border-radius: 5px;
     border: none;
-    padding: 0 1vw;
-    margin: 0 5vw;
+    padding: 0 2vw;
+    margin-left: 2vw;
+    margin-right: -3vw;
 }
 
 .header__button {
@@ -72,7 +79,7 @@ html {
     cursor: pointer;
     outline: none;
     background-color: transparent;
-    color: var(--white-title);
+    color: var(--dark);
     font-size: 1.1rem;
     padding: 30px;
 }
@@ -84,7 +91,7 @@ html {
 /* Grid CSS */
 
 body {
-    background-color: #282c34;
+    /* background-color: #282c34; */
     font-size: 3rem;
 }
 
@@ -92,7 +99,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px black solid;
     border-radius: 4px;
     transition: transform 0.3s ease-in-out;
 
@@ -112,6 +118,7 @@ body {
     grid-auto-rows: minmax(200px, auto);
     gap: 10px;
     padding: 10px;
+    grid-auto-flow: dense;
 }
 
 /* Aside icon bar */
@@ -119,7 +126,7 @@ body {
 .aside {
     height: 100vh;
     width: 10vh;
-    background-color: var(--light-dark);
+    background: linear-gradient(360deg, #dee1e1 10%, #f4f4f4 360%);
     position: fixed;
     top: 0;
     left: 0;
@@ -139,12 +146,12 @@ body {
     background-color: transparent;
     display: block;
     text-align: center;
-    /* padding: 16px; */
     transition: all 0.3s ease;
 }
 
 .aside__button:hover {
-    background-color: var(--middle-dark);
+    /* background-color: var(--middle-dark); */
+    filter: opacity(0.9);
     border-radius: 5px;
 }
 
@@ -199,7 +206,7 @@ hr {
     font-size: 1.6rem;
     border: none;
     display: inline-block;
-    background-color: var(--light-dark);
+    background: linear-gradient(360deg, #dee1e1 10%, #f4f4f4 360%);
     border-radius: 5px;
 }
 
@@ -234,7 +241,7 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 .btn:hover {
-    background-color:  var(--light-dark);
+    background-color:  var(--middle-dark);
     opacity:1;
 }
 
@@ -262,12 +269,29 @@ input[type=text]:focus, input[type=password]:focus {
 /* Media Queries */
 
 @media (min-width: 600px) {
-    .section {
-        margin-left: 10vh;
+    .header{
+        height: 12vh;
     }
 
     .header__button {
-        width: 10vh;
+        height: 13vh;
+        width: 13vh;
+    }
+
+    .aside {
+        width: 13vh;
+    }
+
+    .section {
+        margin-left: 13vh;
+    }
+
+    .wide {
+        grid-column: span 2;
+    }
+
+    .tall {
+        grid-row: span 2;
     }
 
     .title {
@@ -289,8 +313,19 @@ input[type=text]:focus, input[type=password]:focus {
         outline: none;
     }
 
-    .open {
+    .header__button-user:hover {
+        filter: opacity(0.6);
+    }
+
+    .header__form-input {
+        height: 3.5vh;
         width: 35vh;
+        font-size: 1.5rem;
+        margin-right: 0.5vw;
+    }
+
+    .open {
+        width: 39vh;
         text-align: left;
     }
 
@@ -301,11 +336,13 @@ input[type=text]:focus, input[type=password]:focus {
 
     .aside__div:hover {
         background-color: var(--middle-dark);
+        filter: opacity(0.9);
         border-radius: 5px;
     }
 
     .aside__button {
-        width: 10vh;
+        width: 13vh;
+        height: 13vh;
     }
 
     .aside__div-button-h1 {
@@ -315,6 +352,20 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 @media (min-width: 1000px) {
+    .section {
+        margin-left: 39vh;
+    }
+
+    .title {
+        margin-left: 3vh;
+        width: 32vh;
+        font-weight: 800;
+    }
+
+    .header__button-h1 {
+        font-size: 1.8rem;
+    }
+
     .header__form-input {
         height: 5vh;
         width: 50vh;
