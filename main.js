@@ -22,29 +22,30 @@ const presentation = get("presentation");
 const trash = get("trash");
 const photo = get("photo");
 const asideLogIn = get("asideLogIn");
-const asideDiv = get("asideDiv");
+const asideLogOut = get("asideLogOut");
+const asideDivLogIn = get("asideDivLogIn");
+const asideDivLogOut = get("asideDivLogOut");
 
 
 const galleryItems = JSON.parse(localStorage.getItem("gallery"));
 
-let users = [];
-localStorage.setItem("users", JSON.stringify(users));
 let userIndex = 0;
 
-const usersArray = JSON.parse(localStorage.getItem("users"));
 
 function initResponsiveTopBar(){
     window.addEventListener('load', function(){
         if (window.matchMedia("(min-width: 600px)").matches) {
             title.innerHTML = `<h1 class="header__button-h1">Photo Gallery</h1>`;
             // aside.classList.remove('hidden');
-            asideDiv.classList.add('hidden');
+            asideDivLogIn.classList.add('hidden');
+            asideDivLogOut.classList.add('hidden');
             logIn.classList.remove('hidden');
         }
         else {
             title.innerHTML = `<h1 class="header__button-h1">Photo</h1>`;
             aside.classList.add('hidden');
             asideLogIn.classList.remove('hidden');
+            asideLogOut.classList.remove('hidden');
             logIn.classList.add('hidden');
         }
         if (window.matchMedia("(min-width: 1000px)").matches) {
@@ -74,7 +75,9 @@ function responsiveTopBar(){
             title.innerHTML = `<h1 class="header__button-h1">Photo Gallery</h1>`;
             aside.classList.remove('hidden');
             asideLogIn.classList.add('hidden');
-            asideDiv.classList.add('hidden');
+            asideLogOut.classList.add('hidden');
+            asideDivLogIn.classList.add('hidden');
+            asideDivLogOut.classList.add('hidden');
             if(currantUser.classList.contains('hidden')){
                 logIn.classList.remove('hidden');
             }
@@ -85,13 +88,17 @@ function responsiveTopBar(){
         else {
             title.innerHTML = `<h1 class="header__button-h1">Photo</h1>`;
             aside.classList.add('hidden');
-            asideDiv.classList.remove('hidden');
+            asideDivLogIn.classList.remove('hidden');
+            asideDivLogIn.classList.remove('hidden');
             asideLogIn.classList.remove('hidden');
+            asideLogOut.classList.remove('hidden');
             if(currantUser.classList.contains('hidden')){
                 logIn.classList.add('hidden');
+                logOut.classList.add('hidden');
             }
             else {
-                logOut.classList.add('hidden');
+                asideDivLogIn.classList.add('hidden');
+                asideDivLogOut.classList.remove('hidden');
             }
         }
         if (window.matchMedia("(min-width: 1000px)").matches) {
@@ -108,7 +115,6 @@ function responsiveTopBar(){
             photo.classList.add('hidden');
             presentation.classList.add('hidden');
             trash.classList.add('hidden');
-            asideLogIn.classList.remove('hidden');
             headerToggle.classList.remove('hidden');
         }
     });
