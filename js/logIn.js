@@ -59,8 +59,6 @@ else {
 }
 
 function createNewUser(){
-    console.log('creado')
-    let user = {};
     user = new User(username.value, password.value);
     usersArray.push(user);
     localStorage.setItem("users", JSON.stringify(usersArray));
@@ -69,13 +67,10 @@ function createNewUser(){
 loginbtn.addEventListener('click', validateInputOnSubmit);
 
 function validateInputOnSubmit(e){
-    console.log('aqui')
     let usernameExist = false;
     let passwordExist = false;
     e.preventDefault();
     usersArray.forEach((item) => {
-        console.log(item.userName);
-        console.log(username.value);
         if(item.userName === username.value){
             usernameExist = true;
             if(item.userPassword === password.value){

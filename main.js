@@ -13,6 +13,7 @@ const username = get('username');
 const password = get('password');
 const invalidUsername = get("invalidUsername");
 const invalidPassword = get("invalidPassword");
+const invalidLoginUsername = get("invalidLoginUsername");
 const invalidLoginPassword = get("invalidLoginPassword");
 const inputSearch = get("inputSearch");
 const search = get("search");
